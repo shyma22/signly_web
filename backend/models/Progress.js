@@ -1,19 +1,24 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const progressSchema = new mongoose.Schema({
-  user: {
+  userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
     required: true
   },
-  module: {
+  moduleId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Module",
     required: true
   },
-  score: Number,
-  totalQuestions: Number,
-  completed: Boolean
+  score: {
+    type: Number,
+    default: 0
+  },
+  completed: {
+    type: Boolean,
+    default: false
+  }
 });
 
-export default mongoose.model("Progress", progressSchema);
+module.exports = mongoose.model("Progress", progressSchema);
