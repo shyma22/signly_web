@@ -1,9 +1,9 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
+import express from "express";
+import mongoose from "mongoose";
+import cors from "cors";
 
-const moduleRoutes = require("./routes/moduleRoutes");
-const lessonRoutes = require("./routes/lessonRoutes");
+import moduleRoutes from "./routes/moduleRoutes.js";
+import lessonRoutes from "./routes/lessonRoutes.js";
 
 const app = express();
 
