@@ -4,6 +4,7 @@ import cors from "cors";
 
 import moduleRoutes from "./routes/moduleRoutes.js";
 import lessonRoutes from "./routes/lessonRoutes.js";
+import quizRoutes from "./routes/quizRoutes.js";
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(express.json());
 // Routes
 app.use("/modules", moduleRoutes);
 app.use("/lessons", lessonRoutes);
+app.use("/quiz", quizRoutes);
 
 // MongoDB connection
 mongoose.connect("mongodb://127.0.0.1:27017/signly")

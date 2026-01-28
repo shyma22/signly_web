@@ -11,9 +11,21 @@ const progressSchema = new mongoose.Schema({
     ref: "Module",
     required: true
   },
+  quiz: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Quiz"
+  },
+  lesson: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Lesson"
+  },
   score: Number,
   totalQuestions: Number,
-  completed: Boolean
+  completed: Boolean,
+  submittedAt: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 export default mongoose.model("Progress", progressSchema);
